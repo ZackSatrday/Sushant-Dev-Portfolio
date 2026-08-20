@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sushant Kumar — Web & AI Technologist</title>
+  <meta name="description"
+    content="Portfolio of Sushant Kumar, a Web & AI technologist building React applications and AI-integrated interfaces.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      /* Mode A: Industrial Swiss (Default) */
+      --bg-primary: #FFFFFF;
+      --text-primary: #000000;
+      --accent-color: #FF4500;
+      /* High-Safety Orange */
+      --text-muted: #888888;
+      /* Alternating Slide Backgrounds (Swiss: Dark -> Light -> Dark -> Light -> Dark) */
+      --hero-bg: radial-gradient(circle at 50% 15%, #1c1d26 0%, #0e0f14 45%, #050608 100%);
+      --hero-dot-color: rgba(255, 255, 255, 0.4);
+      --about-bg: linear-gradient(160deg, #faf7f1 0%, #f1e9dc 45%, #e4dacb 100%);
+      --about-card-bg: rgba(255, 255, 255, 0.85);
+      --about-card-border: #e0d6c8;
+      --projects-bg: radial-gradient(circle at 50% 15%, #22242c 0%, #121318 50%, #060709 100%);
+      --experience-bg: linear-gradient(150deg, #ffffff 0%, #f5f0e6 45%, #e7ded0 100%);
+      --noise-opacity: 0.07;
+    }
+
+    [data-theme='void'] {
+      /* Mode B: Void Cyber */
+      --bg-primary: #050505;
+      --text-primary: #ECE6DC;
+      --accent-color: #00FFFF;
+      /* Electric Cyan */
+      --text-muted: #8E8A85;
+      /* Alternating Slide Backgrounds (Void: Light -> Dark -> Light -> Dark -> Light) */
+      --hero-bg: radial-gradient(circle at 50% 15%, #ffffff 0%, #f4f1e8 45%, #e6dfd1 100%);
+      --hero-dot-color: rgba(0, 0, 0, 0.35);
+      --about-bg: linear-gradient(160deg, #161720 0%, #0c0d12 45%, #030305 100%);
+      --about-card-bg: rgba(20, 20, 20, 0.85);
+      --about-card-border: rgba(255, 255, 255, 0.12);
+      --projects-bg: radial-gradient(circle at 50% 15%, #ffffff 0%, #f4f1e8 45%, #e6dfd1 100%);
+      --experience-bg: linear-gradient(150deg, #171822 0%, #0c0d11 45%, #020204 100%);
+      --noise-opacity: 0.08;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background-color 0.5s ease, color 0.5s ease;
+      overflow-x: hidden;
+    }
+
+    /* Hide scrollbar for clean aesthetic */
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+
+    .redacted {
+      background-color: currentColor;
+      color: transparent;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      padding: 0 4px;
+      border-radius: 2px;
+      cursor: help;
+    }
+
+    .redacted:hover {
+      background-color: transparent;
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-decoration-color: var(--accent-color);
+    }
+
+    .blend-difference {
+      mix-blend-mode: difference;
+    }
+  </style>
+  <script type="importmap">
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
