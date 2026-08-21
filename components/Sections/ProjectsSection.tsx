@@ -1,49 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
-
-const projects = [
-    {
-        id: 1,
-        title: 'Mental Wellness App',
-        category: 'Ai - HealthTech',
-        image: 'https://static.vecteezy.com/system/resources/thumbnails/012/199/362/small_2x/mental-health-text-long-banner-on-grey-background-free-photo.jpg',
-        github: 'https://github.com/ZackSatrday/Mental-health-app',
-        live: 'https://mental-health-app-wheat.vercel.app/'
-    },
-    {
-        id: 2,
-        title: 'Diabatic-Ai',
-        category: 'Healthcare',
-        image: 'https://static.vecteezy.com/system/resources/thumbnails/023/797/197/small_2x/medical-stethoscope-for-doctors-stethoscope-and-empty-space-icon-vector.jpg',
-        github: 'https://github.com/ZackSatrday/medical_diagnosis',
-        live: 'https://se-project-red.vercel.app/'
-    },
-    {
-        id: 3,
-        title: 'EduVidwan',
-        category: 'Education',
-        image: 'https://static.vecteezy.com/system/resources/thumbnails/001/925/922/small_2x/investment-in-education-concept-free-vector.jpg',
-        github: 'https://github.com/ZackSatrday/eduvidwaan-newV',
-        live: 'https://eduvidwaan-new-v.vercel.app/'
-    },
-    {
-        id: 4,
-        title: 'Liqupsy',
-        category: 'Entertainment',
-        image: 'https://liqu-psy.netlify.app/hero.png',
-        github: 'https://github.com/ZackSatrday/LiquPsy',
-        live: 'https://liqu-psy.netlify.app/'
-    },
-    {
-        id: 5,
-        title: 'REDEFINE',
-        category: 'Gaming',
-        image: 'https://refine-gaming.netlify.app/img/swordman.webp',
-        github: 'https://github.com/ZackSatrday/GamingWebsite',
-        live: 'https://refine-gaming.netlify.app/'
-    },
-];
+import { projects } from '../../data/projects';
 
 const ProjectsSection: React.FC = () => {
     const targetRef = useRef<HTMLDivElement>(null);
@@ -51,7 +9,7 @@ const ProjectsSection: React.FC = () => {
         target: targetRef,
     });
 
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
+    const x = useTransform(scrollYProgress, [0, 1], ['0%', `-${50 + projects.length * 6}%`]);
 
     return (
         <section
@@ -93,6 +51,7 @@ const ProjectsSection: React.FC = () => {
                                 <img
                                     src={project.image}
                                     alt={project.title}
+                                    loading="lazy"
                                     className="h-full w-full object-cover opacity-60 group-hover:opacity-90 transition-all duration-700 grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110"
                                 />
 
@@ -103,22 +62,26 @@ const ProjectsSection: React.FC = () => {
                                         <h4 className="text-3xl font-bold text-white uppercase mb-6">{project.title}</h4>
 
                                         {/* Action Buttons */}
-                                        <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                        <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                             <a
                                                 href={project.github}
-                                                className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-xs font-bold hover:bg-accent hover:text-black transition-colors"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label={`${project.title} GitHub repository`}
+                                                className="flex items-center justify-center p-2.5 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-accent hover:text-black transition-colors"
                                                 onClick={(e) => e.stopPropagation()}
                                             >
-                                                <Github size={14} />
-                                                <span>REPO</span>
+                                                <Github size={16} />
                                             </a>
                                             <a
                                                 href={project.live}
-                                                className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-full text-xs font-bold hover:bg-accent transition-colors"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label={`${project.title} live demo`}
+                                                className="flex items-center justify-center p-2.5 bg-white text-black rounded-full hover:bg-accent transition-colors"
                                                 onClick={(e) => e.stopPropagation()}
                                             >
-                                                <ExternalLink size={14} />
-                                                <span>VISIT</span>
+                                                <ExternalLink size={16} />
                                             </a>
                                         </div>
                                     </div>

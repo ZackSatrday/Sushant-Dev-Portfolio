@@ -58,10 +58,11 @@ export const HeroAboutTransitionImage: React.FC<HeroAboutTransitionImageProps> =
               className="w-full h-full min-h-[280px] md:min-h-[460px] overflow-hidden border border-secondary/20 shadow-2xl backdrop-blur-sm bg-secondary/5 origin-center"
             >
               <img
-                src="/my_pic/sushant04.png"
-                alt="Sushant Kumar"
+                src="/profile/sushant.png"
+                alt="Sushant Kumar profile photo"
                 className="w-full h-full object-cover object-center select-none"
                 loading="eager"
+                fetchPriority="high"
               />
             </motion.div>
           </div>
