@@ -45,7 +45,8 @@ export const HeroAboutTransitionImage: React.FC<HeroAboutTransitionImageProps> =
   return (
     <div className="absolute inset-0 pointer-events-none z-25">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center px-4 sm:px-8">
-        <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-12">
+        {/* Shift the grid left so the image overhangs the card's left edge */}
+        <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-12 md:-translate-x-6">
           <div className="relative min-h-[280px] w-full md:col-span-5 md:min-h-full">
             <motion.div
               style={{
@@ -54,8 +55,9 @@ export const HeroAboutTransitionImage: React.FC<HeroAboutTransitionImageProps> =
                 scale,
                 willChange: 'transform',
                 borderRadius: '1rem',
+                boxShadow: '-8px 16px 48px rgba(0,0,0,0.20), 0 4px 16px rgba(0,0,0,0.10)',
               }}
-              className="w-full h-full min-h-[280px] md:min-h-[460px] overflow-hidden border border-secondary/20 shadow-2xl backdrop-blur-sm bg-secondary/5 origin-center"
+              className="w-full h-full min-h-[280px] md:min-h-[460px] overflow-hidden border border-secondary/20 backdrop-blur-sm bg-secondary/5 origin-center"
             >
               <img
                 src="/profile/sushant.png"
